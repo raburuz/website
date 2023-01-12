@@ -67,7 +67,7 @@ export default function Me() {
             </div>
             <div className='flex flex-col gap-4'>
               <h2 className='font-semibold text-xl underline underline-offset-4 decoration-solid decoration-2 decoration-gray-500 '>Stack</h2>
-              <p>
+
               <ul className='flex flex-col gap-2'>
                 <li>
                   <div className='flex gap-3'>
@@ -94,7 +94,6 @@ export default function Me() {
                   </div>
                 </li>
               </ul>
-              </p>
             </div>
             <div className='flex flex-col gap-4'>
               <h2 className='font-semibold text-xl underline underline-offset-4 decoration-solid decoration-2 decoration-gray-500 '>I ♥</h2>

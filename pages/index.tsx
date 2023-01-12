@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { Footer } from '../components/Footer'
 import { Navbar } from '../components/Navbar'
 
 export default function Home() {
@@ -13,13 +14,18 @@ export default function Home() {
       <main>
         <Navbar></Navbar>
         <h1 className='text-5xl leading-[1.2] font-normal tracking-wide my-10'>Optimize your <br /> Life</h1>
-        <div>
+        <div className='flex flex-col gap-4'>
           <div className='flex gap-4 items-center'>
             <h2 className='uppercase text-gray-600 font-semibold'>Products</h2>
             <div className='h-px w-full bg-gray-600 '></div>
           </div>
+          <div>
+            <h3 className='text-sm text-gray-600'>Themes</h3>
+
+          </div>
         </div>
       </main>
+      <Footer/>
     </>
   )
 }
