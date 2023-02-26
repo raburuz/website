@@ -4,7 +4,7 @@ export const Footer = () => {
   return (
     <footer className='my-10'>
       <div className='flex justify-center'>
-        <span className='text-center font-semibold text-sm text-gray-600'>Copyright © 2023 | Δl Arkift. All rights reserved.</span>
+        <span className='text-center font-black text-sm text-gray-600'>Copyright © 2023 | Δrkift. All rights reserved.</span>
       </div>
     </footer>
   )

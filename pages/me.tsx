@@ -8,7 +8,7 @@ export default function Me() {
   return (
     <>
      <Head>
-        <title>Δl Arkift | Jean Ramirez</title>
+        <title>Δrkift | Who we are</title>
         <meta name="description" content="Jean Ramirez Digital Craftsman based in Spain" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
