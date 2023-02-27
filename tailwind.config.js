@@ -14,7 +14,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        anton: ['var(--font-title)', ...fontFamily.sans],
+        roboto: ['var(--font-roboto)', ...fontFamily.sans],
       },
       colors:{
         brand : '#0b0b0f'
