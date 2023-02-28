@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import { Footer } from '../components/Footer'
 import { Navbar } from '../components/Navbar'
 
@@ -12,10 +13,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Navbar></Navbar>
-        <div className='flex flex-col gap-32'>
+        <div className='@layout'>
+          <Navbar></Navbar>
+        </div>
+        <div className='@layout flex flex-col gap-32'>
 
-          <div className='h-[500px] flex items-center '>
+          <div className='h-[500px] flex items-center justify-between'>
             <div className='flex flex-col gap-1'>
               <p>
                 <span className='font-black'>Δrkift.{' '}</span>
@@ -28,6 +31,14 @@ export default function Home() {
               <div className='mt-6'>
                 <button className='btn btn-primary rounded-md'>Contactanos</button>
               </div>
+            </div>
+            <div className="saturate-150 select-none">
+              <Image
+                src={'/ilustracion.png'}
+                alt='Arkift design'
+                width={500}
+                height={500}
+              ></Image>
             </div>
           </div>
 
@@ -49,14 +60,14 @@ export default function Home() {
               </div>
               <div className='flex items-center gap-2 mt-4'>
                 <div className='h-16 w-8 border border-solid border-white rounded-3xl flex flex-col items-center justify-center'>
-                  <svg xmlns="http  ://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  <svg xmlns="http  ://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4 animate-pulse">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                   </svg>  
-                  <svg xmlns="http  ://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4 opacity-70">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  <svg xmlns="http  ://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4 animate-pulse opacity-70">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                   </svg>  
-                  <svg xmlns="http  ://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4 opacity-50">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  <svg xmlns="http  ://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4 animate-pulse opacity-60">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                   </svg>  
                 </div>
                 <div>
@@ -87,8 +98,8 @@ export default function Home() {
               </h2>
             </div>
             {/* Grid */}
-            <div className='flex gap-2 text-white'>
-              <div className='flex flex-col gap-2 mt-10'>
+            <div className='flex gap-4 text-white'>
+              <div className='flex flex-col gap-4 mt-10'>
                 <div className='@card'>
                   <h3>Webs a Medida</h3>
                   <p>
@@ -102,7 +113,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className='flex flex-col gap-2'>
+              <div className='flex flex-col gap-4'>
                 <div className='@card '>
                   <h3>Diseño Web</h3>
                   <p>
@@ -118,8 +129,19 @@ export default function Home() {
               </div>
             </div>
           </div>
-
         </div>
+
+        <div className='w-full h-96 bg-primary my-32'>
+          <div className='@layout h-full text-white p-6 flex flex-col items-center justify-center gap-4 '>
+            <div>
+              <p className='text-xl font-semibold font-roboto leading-tight tracking-wide max-w-4xl text-center'>
+                Nuestro procedimiento está caracterizado por un método ágil de trabajo, combinando estrategia,
+                diseño y tecnología y excelentes personas también.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <Footer/>
       </main>
     </>

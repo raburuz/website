@@ -10,9 +10,12 @@
 
 @layer components{
   .\@card{
-    @apply p-6 bg-primary w-auto h-fit shadow-md rounded-lg
+    @apply p-6 bg-primary w-auto h-fit shadow-md rounded-2xl
       [&_h3]:font-medium [&_h3]:tracking-widest  
       [&_p]:font-light  
     ;
+  }
+  .\@layout{
+    @apply max-w-6xl px-2 mx-auto my-0;
   }
 }
