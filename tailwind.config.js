@@ -9,10 +9,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    backgroundImage:{
-      'texture-pattern': "url('/texture.png')",
-    },
     extend: {
+      backgroundImage:{
+        'texture-pattern': "url('/texture.png')",
+      }
+      ,
       fontFamily: {
         roboto: ['var(--font-roboto)', ...fontFamily.sans],
       },

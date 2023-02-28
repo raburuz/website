@@ -11,7 +11,7 @@
 @layer components{
   .\@card{
     @apply p-6 bg-primary w-auto h-fit shadow-md rounded-2xl
-      [&_h3]:font-medium [&_h3]:tracking-widest  
+      [&_h3]:font-semibold [&_h3]:-tracking-tighter  
       [&_p]:font-light  
     ;
   }

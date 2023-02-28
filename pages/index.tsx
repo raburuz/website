@@ -25,7 +25,15 @@ export default function Home() {
                 <span className='font-light'>Donde los datos se convierten en inspiración</span>   
               </p>
               <h1 className='text-5xl font-black tracking-wide leading-snug'>
-                Grandes Cosas Suceden<br /> Cuando Trabajamos <br /> <span className='text-sky-900'>Juntos</span>
+                <span>
+                  Grandes Cosas Suceden
+                </span>
+                <br />
+                <span>
+                 Cuando Trabajamos 
+                </span>
+                 <br /> 
+                <span className='inline-block bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500'>Juntos</span>
               </h1>
               <span className='text-lg font-light'>Lleva tu marca a nuevas alturas en el espacio digital </span>
               <div className='mt-6'>
@@ -34,6 +42,7 @@ export default function Home() {
             </div>
             <div className="saturate-150 select-none">
               <Image
+                priority={true}
                 src={'/ilustracion.png'}
                 alt='Arkift design'
                 width={500}
@@ -42,7 +51,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className='flex gap-4 items-start bg-primary rounded-xl min-h-[500px] p-12 text-white'>
+          <div className='flex gap-4 items-start bg-primary rounded-xl p-12 text-white'>
             <div className='flex flex-col gap-4 w-1/3'>
               <div className='flex items-center gap-2'>
                 <div className='w-14 h-3 border border-solid opacity-50 rounded-md'></div>
@@ -136,7 +145,7 @@ export default function Home() {
             <div>
               <p className='text-xl font-semibold font-roboto leading-tight tracking-wide max-w-4xl text-center'>
                 Nuestro procedimiento está caracterizado por un método ágil de trabajo, combinando estrategia,
-                diseño y tecnología y excelentes personas también.
+                diseño, tecnología y excelentes personas.
               </p>
             </div>
           </div>
