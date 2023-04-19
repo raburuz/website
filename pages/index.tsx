@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import * as HoverCard from '@radix-ui/react-hover-card';
 import { Logo } from '../components/Logo'
+import Image from 'next/image';
+
 export default function Home() {
   return (
     <>
@@ -34,13 +37,50 @@ export default function Home() {
           </nav>
           {/* Content */}
           <div className='hidden w-screen h-px md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0'></div>
+          {/* Hover Card */}
           <h1 className='z-10 text-4xl tracking-wide font-nunito duration-1000 cursor-default animate-title  font-display sm:text-6xl md:text-9xl whitespace-nowrap text-transparent bg-gradient-to-t bg-clip-text from-zinc-100/50 to-white '>
             Δrkift
           </h1>
+          {/* End Hover Card */}
           <div className='hidden w-screen h-px md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0'></div>
           <div className="my-16 text-center animate-fade-in">
             <p className="text-sm text-zinc-500 ">
-              Hi, my name is Jean, I&apos;m software developer and work on my personal projects
+              Hi, my name is{' '}
+                <HoverCard.Root openDelay={2}>
+                  <HoverCard.Trigger asChild>
+                     <span className='cursor-default underline duration-500 text-zinc-500 hover:text-zinc-300'>Jean</span>
+                  </HoverCard.Trigger>
+                  <HoverCard.Portal>
+                    <HoverCard.Content
+                      className="data-[side=bottom]:animate-slideUpAndFade data-[side=right]:animate-slideLeftAndFade data-[side=left]:animate-slideRightAndFade data-[side=top]:animate-slideDownAndFade w-[300px] rounded-md bg-white p-5 shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] data-[state=open]:transition-all"
+                      sideOffset={5}
+                    >
+                      <div className="flex flex-col gap-[7px]">
+                        <div className='flex items-center gap-4'>
+                          <Image
+                            className="block h-[60px] w-[60px] rounded-full"
+                            src="/jean_pablo_calderon_ramirez.jpg"
+                            alt="Jean Pablo Photo"
+                            width={100}
+                            height={100}
+                          />
+                          <div>
+                            <h2 className="text-sm font-bold leading-[1.5]">Jean Pablo Calderón Ramírez</h2>
+                            <span className="text-sm leading-[1.5]">@arkift</span>
+                          </div>
+                        </div>
+                        <div className="flex flex-col gap-[15px]">
+                          <p className="text-[15px] leading-[1.5]">
+                            Jean is a full-stack developer based in Spain with a passion for building digital services/stuff he wants. 
+                          </p>
+                        </div>
+                      </div>
+
+                      <HoverCard.Arrow className="fill-white" />
+                    </HoverCard.Content>
+                  </HoverCard.Portal>
+                </HoverCard.Root>
+              , I&apos;m software developer and work on my personal projects
               <br />
               To hire my service contact me. 
             </p>
