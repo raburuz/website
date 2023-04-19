@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import * as HoverCard from '@radix-ui/react-hover-card';
+import * as Tooltip from '@radix-ui/react-tooltip';
 import { Logo } from '../components/Logo'
 import Image from 'next/image';
+import { Pointer } from '../components/Pointer';
 
 export default function Home() {
   return (
@@ -13,7 +15,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/arkift.svg" />
       </Head>
-      <main className='relative bg-black font-inter'>
+      <main className='relative bg-black font-inter !cursor-none'>
         {/* Content */}
         <div className='flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black'>
           {/* Navbar */}
@@ -43,20 +45,20 @@ export default function Home() {
           </h1>
           {/* End Hover Card */}
           <div className='hidden w-screen h-px md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0'></div>
-          <div className="my-16 text-center animate-fade-in">
+          <div className="z-10 my-16 text-center animate-fade-in">
             <p className="text-sm text-zinc-500 ">
               Hi, my name is{' '}
                 <HoverCard.Root openDelay={2}>
                   <HoverCard.Trigger asChild>
-                     <span className='cursor-default underline duration-500 text-zinc-500 hover:text-zinc-300'>Jean</span>
+                     <span className='underline duration-500 text-zinc-400 hover:text-zinc-300'>Jean</span>
                   </HoverCard.Trigger>
                   <HoverCard.Portal>
                     <HoverCard.Content
-                      className="data-[side=bottom]:animate-slideUpAndFade data-[side=right]:animate-slideLeftAndFade data-[side=left]:animate-slideRightAndFade data-[side=top]:animate-slideDownAndFade w-[300px] rounded-md bg-white p-5 shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] data-[state=open]:transition-all"
+                      className="z-20 data-[side=bottom]:animate-slideUpAndFade data-[side=right]:animate-slideLeftAndFade data-[side=left]:animate-slideRightAndFade data-[side=top]:animate-slideDownAndFade w-[300px] rounded-md bg-white p-5 shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] data-[state=open]:transition-all"
                       sideOffset={5}
                     >
                       <div className="flex flex-col gap-[7px]">
-                        <div className='flex items-center gap-4'>
+                        <div className=' flex items-center gap-4'>
                           <Image
                             className="block h-[60px] w-[60px] rounded-full"
                             src="/jean_pablo_calderon_ramirez.jpg"
@@ -80,7 +82,7 @@ export default function Home() {
                     </HoverCard.Content>
                   </HoverCard.Portal>
                 </HoverCard.Root>
-                and I&apos;m a software developer working on personal projects. 
+                {' '}and I&apos;m a software developer working on personal projects. 
               <br />
               If you&apos;re interested in hiring my services, please feel free to contact me.
             </p>
@@ -105,6 +107,14 @@ export default function Home() {
         {/* Logo */}
         <div className='fixed bottom-2 right-2'>
           <Logo/>
+        </div>
+        {/* Pointer */}
+        <Pointer/>
+        {/* Available */}
+        <div className='absolute top-2 right-2'>
+          <div className='w-8 h-8 rounded-full bg-white/20 flex justify-center items-center'>
+            <div className='w-2 h-2 rounded-full bg-green-500 animate-pulse'></div>
+          </div>
         </div>
       </main>
     </>
