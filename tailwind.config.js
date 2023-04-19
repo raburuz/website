@@ -10,15 +10,72 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage:{
-        'texture-pattern': "url('/texture.png')",
-      }
-      ,
-      fontFamily: {
-        roboto: ['var(--font-roboto)', ...fontFamily.sans],
+      fontFamily:{
+        inter: ['var(--font-inter)', ...fontFamily.sans],
+        nunito: ['var(--font-nunito)', ...fontFamily.serif],
       },
-      colors:{
-        brand : '#0b0b0f'
+      animation:{
+        title:'title 3s ease-out forwards',
+        'fade-left':'fade-left 3s ease-in-out forwards',
+        'fade-right':'fade-right 3s ease-in-out forwards',
+        'fade-in':'fade-in 3s ease-in-out forwards',
+      },
+      keyframes:{
+        title:{
+          '0%':{
+            lineHeight: '0%',
+            letterSpacing: '.25em',
+            opacity: 0,
+          },
+          '25%':{
+              lineHeight: '0%',
+              opacity: 0,
+          },
+          '80%':{
+              opacity: '100%',
+          },
+          '100%':{
+              lineHeight: '100%',
+              opacity: '100%',
+          }
+        },
+        'fade-left':{
+          '0%': {
+            transform: 'translateX(100%)',
+            opacity: 0,
+          },
+          '30%': {
+              transform: 'translateX(0)',
+              opacity: '100%',
+          },
+          '100%': {
+              opacity: 0,
+          }
+        },
+        'fade-right':{
+          '0%': {
+            transform: 'translateX(-100%)',
+            opacity: 0,
+          },
+          '30%': {
+              transform: 'translateX(0)',
+              opacity: '100%',
+          },
+          '100%': {
+              opacity: 0,
+          }
+        },
+        'fade-in':{
+          '0%': {
+            opacity: 0,
+          },
+          '75%': {
+              opacity: 0,
+          },
+          '100%': {
+              opacity: '100%',
+          }
+        }
       }
     },
   },
