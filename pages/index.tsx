@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { Logo } from '../components/Logo'
 export default function Home() {
   return (
     <>
@@ -60,6 +61,10 @@ export default function Home() {
           <svg viewBox="0 0 1113 440" aria-hidden="true" className="absolute top-20 left-1/2 ml-[-22rem] w-[50rem] fill-white opacity-70 blur-[30px] dark:hidden">
             <path d="M.016 439.5s-9.5-300 434-300S882.516 20 882.516 20V0h230.004v439.5H.016Z"></path>
           </svg>
+        </div>
+        {/* Logo */}
+        <div className='fixed bottom-2 right-2'>
+          <Logo/>
         </div>
       </main>
     </>
