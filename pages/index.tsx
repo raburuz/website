@@ -8,7 +8,7 @@ export default function Home() {
         <title>Δrkift.com</title>
         <meta name="description" content="Digital products to Optimize your life" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/arkift.svg" />
       </Head>
       <main className='relative bg-black font-inter'>
         {/* Content */}
