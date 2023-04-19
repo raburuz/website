@@ -80,9 +80,9 @@ export default function Home() {
                     </HoverCard.Content>
                   </HoverCard.Portal>
                 </HoverCard.Root>
-              , I&apos;m software developer and work on my personal projects
+                and I&apos;m a software developer working on personal projects. 
               <br />
-              To hire my service contact me. 
+              If you&apos;re interested in hiring my services, please feel free to contact me.
             </p>
           </div>
         </div>
