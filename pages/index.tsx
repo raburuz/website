@@ -19,21 +19,17 @@ export default function Home() {
         {/* Content */}
         <div className='flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black'>
           {/* Navbar */}
-          <nav className='z-50 my-16 animate-fade-in'>
+          <nav className='z-10 my-16 animate-fade-in'>
             <ul className='flex items-center justify-center gap-4'>
               <li>
                 <Link  
                   href={''} 
                   className="cursor-none text-sm duration-500 text-zinc-500 hover:text-zinc-300">
-                   Projects
+                   Projects (Coming soon)
                 </Link>
               </li>
               <li>
-                <Link  
-                  href={''} 
-                  className="cursor-none text-sm duration-500 text-zinc-500 hover:text-zinc-300">
-                   Contact
-                </Link>
+                <a className='cursor-none text-sm duration-500 text-zinc-500 hover:text-zinc-300' target='_blank' rel='noreferrer noopener nofollow' href="https://www.linkedin.com/in/jean-ram/">Contact</a>
               </li>
             </ul>
           </nav>
