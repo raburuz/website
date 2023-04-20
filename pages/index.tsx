@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import * as HoverCard from '@radix-ui/react-hover-card';
-import * as Tooltip from '@radix-ui/react-tooltip';
-import { Logo } from '../components/Logo'
 import Image from 'next/image';
+import * as HoverCard from '@radix-ui/react-hover-card';
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
+import { Logo } from '../components/Logo'
 import { Pointer } from '../components/Pointer';
 
 export default function Home() {
@@ -46,7 +46,7 @@ export default function Home() {
           {/* End Hover Card */}
           <div className='hidden w-screen h-px md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0'></div>
           <div className="z-10 my-16 text-center animate-fade-in">
-            <p className="text-sm text-zinc-500 ">
+            <p className="px-2 text-sm text-zinc-500 ">
               Hi, my name is{' '}
                 <HoverCard.Root openDelay={2}>
                   <HoverCard.Trigger asChild>
@@ -105,17 +105,34 @@ export default function Home() {
           </svg>
         </div>
         {/* Logo */}
-        <div className='fixed bottom-2 right-2'>
+        <div className='fixed bottom-2 right-2 animate-fade-in'>
           <Logo/>
         </div>
         {/* Pointer */}
         <Pointer/>
         {/* Available */}
-        <div className='absolute top-2 right-2'>
-          <div className='w-8 h-8 rounded-full bg-white/20 flex justify-center items-center'>
-            <div className='w-2 h-2 rounded-full bg-green-500 animate-pulse'></div>
-          </div>
-        </div>
+        <DropdownMenu.Root>
+          <DropdownMenu.Trigger asChild>
+            <div className='absolute top-2 right-2 p-4 w-fit h-8 rounded-full bg-white/20 hover:bg-white/30 flex justify-center items-center gap-2 animate-fade-in'>
+              <div className='w-2 h-2 rounded-full bg-green-500 animate-pulse'></div>
+              <span className='text-white text-[10px]'>Available</span>
+            </div>
+          </DropdownMenu.Trigger>
+
+          <DropdownMenu.Portal>
+          <DropdownMenu.Content
+              className="min-w-[120px] bg-white rounded-md p-[5px] mx-2 shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),_0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)] will-change-[opacity,transform] data-[side=top]:animate-slideDownAndFade data-[side=right]:animate-slideLeftAndFade data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade"
+              sideOffset={5}
+            >
+              <DropdownMenu.Item className="text-[13px] leading-none rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none hover:text-sky-800">
+                <a className='w-full' target='_blank' rel='noreferrer noopener nofollow' href="https://www.linkedin.com/in/jean-ram/">Linkdln</a>
+              </DropdownMenu.Item>
+              <DropdownMenu.Item className="text-[13px] leading-none rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none hover:text-sky-800">
+                <a className='w-full' href="mailto: jeanpablocalderonramirez@gmail.com">Email</a>
+              </DropdownMenu.Item>
+            </DropdownMenu.Content>
+          </DropdownMenu.Portal>
+        </DropdownMenu.Root>
       </main>
     </>
   )
