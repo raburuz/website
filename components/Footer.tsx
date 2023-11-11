@@ -10,6 +10,7 @@ export const Footer = () => {
         <Link href="https://twitter.com/arkift_r" target="_blank" rel="nofollow noreferrer noopener">Twitter</Link>
         <Link href="https://github.com/raburuz" target="_blank" rel="nofollow noreferrer noopener">Github</Link>
       </div>
+      {/* Build */}
       <p className="mt-6 text-blue-100/20">
         Built with Next.js, MDX, Tailwind and Vercel
       </p>
