@@ -1,7 +1,5 @@
 /* NEXT */
-import { headers } from 'next/headers'
 import type { Metadata } from 'next';
-
 
 interface IDefaultMetadataProps{
   title?: string, 
@@ -10,8 +8,7 @@ interface IDefaultMetadataProps{
 
 const defaultMetadata= ( data?: IDefaultMetadataProps ): Metadata => {
 
-  const host = headers().get("host");
-  const domain = "https://" + host;
+  const domain = "https://arkift.com";
 
   const title = data?.title ?? "Jean Ramirez | Life enthusiast seeking to achieve freedom"; 
   const description = data?.description ?? "Welcome to my digital oasis 🏝️ where I invite you to explore my digital products, projects, experiments..."; 
