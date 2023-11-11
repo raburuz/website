@@ -9,7 +9,7 @@ interface IDefaultMetadataProps{
 const defaultMetadata= ( data?: IDefaultMetadataProps ): Metadata => {
 
   const domain = "https://arkift.com";
-
+  
   const title = data?.title ?? "Jean Ramirez | Life enthusiast seeking to achieve freedom"; 
   const description = data?.description ?? "Welcome to my digital oasis 🏝️ where I invite you to explore my digital products, projects, experiments..."; 
 
