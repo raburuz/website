@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "concurrently --kill-others \"npm run prisma:generate && next dev --port 3000\"",
-    "build": "prima generate && next build",
+    "build": "npm run prisma:generate && next build",
     "start": "next start",
     "lint": "next lint",
     "prisma:db_push": "npx prisma db push",
