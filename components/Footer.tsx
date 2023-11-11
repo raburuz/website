@@ -1,6 +1,7 @@
+/* NEXT */
 import Link from "next/link"
 
-
+/* COMPONENT */
 export const Footer = () => {
   return (
     <footer className="py-28">

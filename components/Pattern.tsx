@@ -1,4 +1,5 @@
 
+/* COMPONENT */
 export const Pattern = () => {
   return (
     <>
