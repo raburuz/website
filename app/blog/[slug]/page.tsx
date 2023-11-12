@@ -7,8 +7,10 @@ import { seo} from "@/lib/seo";
 import { cn } from "@/lib/utils";
 import { apiClient } from "@/lib/fetch";
 import { allBlogPosts } from "contentlayer/generated";
-import { MDX } from "@/component/MDX";
 import { month } from "@/constrains/date";
+import { MDX } from "@/component/MDX";
+import { LikeButton } from "@/component/LikeButton";
+import { BackToTopButton } from "@/component/BackToTopButton";
 
 //Params interface
 interface IProps {
@@ -45,41 +47,31 @@ export async function generateMetadata( { params }: IProps ): Promise<Metadata> 
   })
 }
 
-const getPostData = async ( slug: string ): Promise<{ views: number, likes: number }> => {
-  
-  const response = await apiClient(`/post/${slug}`, {
+const getViewsPost = async ( slug: string ): Promise<{ views: number }> => {
+  "use server"
+  const response = await apiClient(`/post/${slug}/view`, {
     method: "GET",
     headers: {
       'Content-Type': 'application/json'
     },
-    cache: "no-cache"
+    next: {
+      revalidate: 300 // 5 min
+    }
   })
 
-  if (!response.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data')
-  }
+  return await response.json();
 
-  const data = await response.json();
-
-  return data
 }
 
 const sendViewPost = async ( slug: string ) => {
-
-  const response = await apiClient(`/post/${slug}/view`, {
+  "use server"
+  await apiClient(`/post/${slug}/view`, {
     method: "POST",
     headers: {
       'Content-Type': 'application/json'
     },
     cache: "no-cache"
   })
-
-  if (!response.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data')
-  }
-
 }
 
 export const dynamic = 'force-dynamic'
@@ -90,9 +82,9 @@ export default async function Page( { params }: IProps ){
   
   if(!post) notFound();
 
-  const [ , postData] = await Promise.all([
+  const [ , postData ] = await Promise.all([
     sendViewPost(post.metadata.slugAsPath),
-    getPostData(post.metadata.slugAsPath),
+    getViewsPost(post.metadata.slugAsPath),
   ])
 
   return (
@@ -104,8 +96,6 @@ export default async function Page( { params }: IProps ){
             <span>{ new Date(post.publishedAt).getDate() } { month[new Date(post.publishedAt).getMonth()] } {new Date(post.publishedAt).getFullYear()}</span>
             <span className="text-blue-100/30">·</span>
             <span>{postData.views ?? 0} views</span>
-            <span className="text-blue-100/30">·</span>
-            <span>{postData.likes ?? 0} likes</span>
           </div>
         </div>
         <MDX code={post.body.code}/>
@@ -115,7 +105,7 @@ export default async function Page( { params }: IProps ){
           <div className="w-full space-y-6">
             {post.headings ? (
               <div className="w-full space-y-2 text-sm">
-                <div className="uppercase text-rose-100/30">On this page</div>
+                <div className="uppercase text-blue-100/30">On this page</div>
 
                 {
                   post.headings.map( heading => 
@@ -123,7 +113,7 @@ export default async function Page( { params }: IProps ){
                       <a
                         href={`#${heading.slug}`}
                         className={cn(
-                          "block text-rose-100/50 underline-offset-2 transition-all hover:text-rose-100 hover:underline hover:decoration-rose-200/50",
+                          "block text-blue-100/50 underline-offset-2 transition-all hover:text-blue-100 hover:underline hover:decoration-blue-200/50",
                           {
                             "pl-0.5": heading.heading === 2,
                             "pl-2": heading.heading === 3,
@@ -137,6 +127,10 @@ export default async function Page( { params }: IProps ){
                 }
               </div>
             ) : null}
+        </div>
+        <div className="mt-6 pt-6 flex flex-row items-center justify-between gap-2 border-t border-blue-200/20">
+          <LikeButton slug={post.metadata.slugAsPath}/>
+          <BackToTopButton/>
         </div>
       </div>
     </main>

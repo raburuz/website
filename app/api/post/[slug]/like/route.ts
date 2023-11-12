@@ -64,3 +64,21 @@ export async function POST ( _req: Request, { params }: { params: { slug: string
   
   return NextResponse.json( "Done", { status: 200  } );
 }
+
+/* FUNCTION */
+export async function GET ( _req: Request, { params }: { params: { slug: string } } ){
+  
+  const slug = z.string().toLowerCase().parse(params.slug);
+
+  
+  try {
+    const data = await prisma.post.findUniqueOrThrow({ where: { slug }, select: { likes: true } })
+    return NextResponse.json( data, { status: 200  } );
+
+  } catch (error) {
+    console.log(error);
+    return NextResponse.json( "Something was wrong", { status: 500  } );
+  }
+  
+    
+}
