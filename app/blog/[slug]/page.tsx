@@ -82,6 +82,8 @@ const sendViewPost = async ( slug: string ) => {
 
 }
 
+export const dynamic = 'force-dynamic'
+
 export default async function Page( { params }: IProps ){
 
   const post = allBlogPosts.find( post => post.metadata.slug === '/blog/' + params.slug);
