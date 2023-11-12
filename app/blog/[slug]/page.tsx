@@ -55,7 +55,7 @@ const getViewsPost = async ( slug: string ): Promise<{ views: number }> => {
       'Content-Type': 'application/json'
     },
     next: {
-      revalidate: 300 // 5 min
+      revalidate: 900 // 15 min
     }
   })
 
@@ -74,7 +74,7 @@ const sendViewPost = async ( slug: string ) => {
   })
 }
 
-export const dynamic = 'force-dynamic'
+export const dynamic = 'auto'
 
 export default async function Page( { params }: IProps ){
 
