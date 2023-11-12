@@ -16,7 +16,7 @@ export async function GET ( _req: Request, { params }: { params: { slug: string 
   let post = null;
 
   try {
-    post = await prisma.post.findUnique({ where: { slug } })
+    post = await prisma.post.findUnique({ where: { slug }, select: { views: true, likes: true } })
   } catch (error) {
     console.log(error);
     return NextResponse.json( "Something was wrong", { status: 500  } );
@@ -25,7 +25,7 @@ export async function GET ( _req: Request, { params }: { params: { slug: string 
   try {
 
     if(!post) {
-      post = await prisma.post.create({ data: { slug } })
+      post = await prisma.post.create({ data: { slug }, select: { views: true, likes: true } })
     }
 
   } catch (error) {

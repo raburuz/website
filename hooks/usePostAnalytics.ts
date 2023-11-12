@@ -1,13 +1,16 @@
 
 "use client"
 
+/* APP */
+import { apiClient } from "@/lib/fetch";
+
 /* HOOK */
 export const usePostAnalytics = () => {
 
   const sendViewPost = async ( slug: string ) => {
 
     try {
-      await fetch(`/api/post/${slug}/view`, {
+      await apiClient(`/post/${slug}/view`, {
         method: "POST",
         headers: {
           'Content-Type': 'application/json'
@@ -22,7 +25,7 @@ export const usePostAnalytics = () => {
 
   const sendLikePost = async ( slug: string ) => {
     try {
-      await fetch(`/api/post/${slug}/like`, {
+      await apiClient(`/post/${slug}/like`, {
         method: "POST",
         headers: {
           'Content-Type': 'application/json'
@@ -34,26 +37,9 @@ export const usePostAnalytics = () => {
     }
   }
 
-  const getPostData = async ( slug: string ) => {
-
-    try {
-      await fetch(`/api/post/${slug}`, {
-        method: "GET",
-        headers: {
-          'Content-Type': 'application/json'
-        },
-      })
-      
-    } catch (error) {
-      console.log("Cannot retrieve post data");
-    }
-
-  }
-
   return {
     sendViewPost,
     sendLikePost,
-    getPostData, 
   }
 
 }

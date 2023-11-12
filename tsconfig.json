@@ -28,13 +28,17 @@
       "@/component/*": ["./components/*"],
       "@/icons/*": ["./icons/*"],
       "@/lib/*": ["./lib/*"],
+      "@/env/*": ["./env/*"],
+      "@/constrains/*": ["./constrains/*"],
+      "contentlayer/generated": ["./.contentlayer/generated"],
     }
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    ".contentlayer/generated",
   ],
   "exclude": [
     "node_modules"

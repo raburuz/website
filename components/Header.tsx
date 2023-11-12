@@ -9,7 +9,7 @@ import { Post } from '@/icons/Post'
 /* COMPONENT */
 export const Header = () => {
   return (
-    <header className='sticky top-6 w-full py-2.5 px-4 flex flex-row items-center justify-between gap-8 rounded-xl bg-zinc-800/50 backdrop-blur-sm'>
+    <header className='sticky top-6 max-w-2xl mx-2 md:mx-auto py-2.5 px-2 flex flex-row items-center justify-between gap-8 rounded-xl bg-zinc-800/50 backdrop-blur-sm z-50'>
       <Link href={"/"}>
         <div className='rounded-full focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/70'>
           <div className='rounded-full bg-gradient-to-tl from-purple-900/60 to-blue-400/60 shadow-lg p-[2px] group transform transition ease-out hover:scale-105 hover:from-purple-700 hover:to-blue-400 hover:shadow-blue-500/25 active:translate-y-px'>
@@ -26,7 +26,7 @@ export const Header = () => {
       <nav>
         <ul className='flex items-center justify-center gap-6 [&_a]:font-semibold [&_a]:text-base [&_a]:text-blue-100'>
           <li>
-            <Link href={"/"} className='group flex flex-row items-center gap-2'>
+            <Link href={"/blog"} className='group flex flex-row items-center gap-2'>
               <div className='rounded-lg bg-gradient-to-tl from-purple-500/80 to-blue-400/80 p-1 shadow-lg transition-all duration-300 ease-out group-hover:scale-[1.2] group-hover:rounded-[10px] group-hover:shadow-purple-500/40 group-active:translate-y-1'>
                 <Post/>
               </div>
@@ -34,7 +34,7 @@ export const Header = () => {
             </Link>
           </li>
           <li>
-            <Link href={"#products"} className='group flex flex-row items-center gap-2'>
+            <Link href={"/#products"} className='group flex flex-row items-center gap-2'>
               <div className='rounded-lg bg-gradient-to-tl from-purple-500/80 to-blue-400/80 p-1 shadow-lg transition-all duration-300 ease-out group-hover:scale-[1.2] group-hover:rounded-[10px] group-hover:shadow-purple-500/40 group-active:translate-y-1'>
                 <Store/>
               </div>

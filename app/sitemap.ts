@@ -2,6 +2,9 @@
 import { MetadataRoute } from "next";
 import { headers } from "next/headers";
 
+/* APP */
+import { allBlogPosts } from "contentlayer/generated";
+
 /* SITEMAP */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const headersList = headers();
@@ -15,5 +18,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: domain,
       lastModified: new Date(),
     },
+    {
+      url: domain + "/blog",
+      lastModified: new Date(),
+    },
+    ...allBlogPosts.map((post) => ({
+      url: domain + post.metadata.slug,
+      lastModified: new Date(post.publishedAt),
+    })),
   ];
 }
