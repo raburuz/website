@@ -20,7 +20,7 @@ export default async function Page(){
   
   const sortedPostsByDates  = allBlogPosts.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
 
-  const postDataDB = await getPostDataList()
+  const postDataDB = await getPostDataList();
 
   return (
     <main className='px-2 max-w-2xl mx-auto'>
@@ -33,7 +33,7 @@ export default async function Page(){
           { 
             sortedPostsByDates.map( post => {
 
-              const data = postDataDB.find((data)=> post.metadata.slugAsPath === data.slug ) ?? { likes: 0, views: 0 }
+              const data = postDataDB.find((data)=> post.metadata.slugAsPath === data.slug ) ?? { likes: 0, views: 0 };
 
               return (
                 <Link 

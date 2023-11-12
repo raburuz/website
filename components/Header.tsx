@@ -9,7 +9,7 @@ import { Post } from '@/icons/Post'
 /* COMPONENT */
 export const Header = () => {
   return (
-    <header className='sticky top-6 max-w-2xl mx-2 md:mx-auto py-2.5 px-2 flex flex-row items-center justify-between gap-8 rounded-xl bg-zinc-800/50 backdrop-blur-sm z-50'>
+    <header className='sticky top-6 max-w-2xl mx-2 md:mx-auto py-2.5 px-4 flex flex-row items-center justify-between gap-8 rounded-xl bg-zinc-800/50 backdrop-blur-sm z-50'>
       <Link href={"/"}>
         <div className='rounded-full focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/70'>
           <div className='rounded-full bg-gradient-to-tl from-purple-900/60 to-blue-400/60 shadow-lg p-[2px] group transform transition ease-out hover:scale-105 hover:from-purple-700 hover:to-blue-400 hover:shadow-blue-500/25 active:translate-y-px'>
